@@ -14,9 +14,7 @@ const getConvenienceStoresFromDb = () => {
 
 const serveConvenienceStores = async (req, res) => {
   convenientStores = await getConvenienceStoresFromDb();
-  setImmediate(()=> {
-    res.json(convenientStores)
-  });
+  res.json(convenientStores)
 };
 
 module.exports = {

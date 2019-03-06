@@ -7,7 +7,7 @@ const { backend, frontend } = require('./config.json');
 const app = express();
 
 app.use(cors({
-  origin: `http://${frontend.host}:${frontend.port}`,
+  origin: '*',
   credentials: true
 }));
 
