@@ -15,7 +15,7 @@ const setWhereConditions = (query) => {
   let conditions;
   conditions = '';
   if (query.name) {
-    conditions += `WHERE name like "%${query.name}%" `;
+    conditions += `AND name like "%${query.name}%" `;
   }
 
   if (query.region) {
@@ -29,6 +29,7 @@ const getConvenienceStoresFromDb = (where, limit) => {
     const client = new Database('stores');
     const sql = `SELECT name, road_address, latitude, longitude
                  FROM convenience_stores
+                 WHERE 1=1
                  ${where}
                  ${limit}`;
     // console.log(sql);
