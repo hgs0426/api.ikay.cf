@@ -7,7 +7,7 @@ class Database {
     if ( 'stores' === dbName ) {
       this.opts = config.convenienceStores;
     } else if ( 'ikay' === dbName ) {
-      this.opts = config.user;
+      this.opts = config.ikay;
     } else {
       throw new Error('dbName is not defined!!');
     }
