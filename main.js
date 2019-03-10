@@ -1,16 +1,10 @@
 const express = require('express');
-const cors = require('cors');
-
 const routers = require('./routers.js');
-const { backend, frontend } = require('./config.json');
+const { api } = require('./config.json');
 
 const app = express();
-
-app.use(cors({
-  origin: '*',
-  credentials: true
-}));
-
 app.use('/', routers);
 
-app.listen(backend.port, () => console.log(`Example app listening on port ${backend.port}!`))
+app.listen(api.port, () => {
+  console.log(`API Server listening on port ${api.port}!`)
+});
