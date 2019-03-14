@@ -19,7 +19,7 @@ const setWhereConditions = (query) => {
   }
 
   if (query.region) {
-    conditions += `AND road_address like "%${query.region}%" `;
+    conditions += `AND road_address like "%${query.region}" `;
   }
   return conditions;
 };
