@@ -3,11 +3,11 @@ const Database = require(path.join(__dirname, '../', '../', 'libs', 'Database'))
 
 const limit = (queries) => {
   let conditions = '';
-  if (queries.from && queries.to) {
-    conditions += `LIMIT ${queries.from}, ${Number(queries.to) + 1} `;
+  if (queries.offset && queries.count) {
+    conditions += `LIMIT ${queries.offset}, ${Number(queries.count) + 1} `;
   }
-  if (!queries.from && queries.to) {
-    conditions += `LIMIT ${Number(queries.to) + 1} `;
+  if (!queries.offset && queries.count) {
+    conditions += `LIMIT ${Number(queries.count) + 1} `;
   }
   return conditions;
 }
@@ -39,7 +39,7 @@ const getStoresFromDb = (queries) => {
                 ${whereConditions(queries)}
                 ${limit(queries)}`;
 
-    console.log(sql);
+    //console.log(sql);
     try {
       const stores = await client.query(sql);
       resolve(stores);
@@ -53,8 +53,8 @@ const serveStores = async (req, res) => {
   const queries = {
     storeCode: req.params.storeCode,
     cityCodes: req.query.cityCodes,
-    from: req.query.from,
-    to: req.query.to
+    offset: req.query.offset,
+    count: req.query.count
   };
   console.log(queries);
 

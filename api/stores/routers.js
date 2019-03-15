@@ -30,16 +30,16 @@ const { serveStores } = require(path.join(__dirname, 'controllers'));
  *           description: "code of city. append comma between codes on getting multiple data. (ex: 41,50,11)"
  *           example: "41,50,11"
  *       - in: "query"
- *         name: "from"
+ *         name: "offset"
  *         schema: 
  *           type: "number"
- *           description: "from for paging"
+ *           description: "offset for paging"
  *           example: 0
  *       - in: "query"
- *         name: "to"
+ *         name: "count"
  *         schema: 
  *           type: "number"
- *           description: "to for paging. It will be added 1 because to check having next page."
+ *           description: "count for paging. It will be added 1 because to check having next page."
  *           example: 9
  *     responses:
  *       200:
@@ -70,8 +70,6 @@ const { serveStores } = require(path.join(__dirname, 'controllers'));
  *               
  *
  */
-
-
 
 router.get('/api/stores/:storeCode', serveStores);
 
