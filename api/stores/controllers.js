@@ -4,10 +4,10 @@ const Database = require(path.join(__dirname, '../', '../', 'libs', 'Database'))
 const limit = (queries) => {
   let conditions = '';
   if (queries.from && queries.to) {
-    conditions += `LIMIT ${queries.from}, ${queries.to} `;
+    conditions += `LIMIT ${queries.from}, ${Number(queries.to) + 1} `;
   }
   if (!queries.from && queries.to) {
-    conditions += `LIMIT ${queries.to} `;
+    conditions += `LIMIT ${Number(queries.to) + 1} `;
   }
   return conditions;
 }
