@@ -5,7 +5,7 @@ const { serveCodes } = require(path.join(__dirname, 'controllers'));
 
 /**
  * @swagger
- * /api/stores/codes/{type}/name/{name}:
+ * /api/stores/codes/{type}/names/{name}:
  *   get:
  *     tags:
  *       - "Store"
@@ -61,6 +61,6 @@ const { serveCodes } = require(path.join(__dirname, 'controllers'));
  */
 
 
-router.get('/api/stores/codes/:type/name/:name', serveCodes);
+router.get('/api/stores/codes/:type/names/:name', serveCodes);
 
 module.exports = router;
