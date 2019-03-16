@@ -56,7 +56,7 @@ const serveStores = async (req, res) => {
     offset: req.query.offset,
     count: req.query.count
   };
-  console.log(queries);
+  // console.log(queries);
 
   if(!queries.storeCode) {
     res.status(400).json({
@@ -65,7 +65,7 @@ const serveStores = async (req, res) => {
   }
 
   try {
-    stores = await getStoresFromDb(queries);
+    const stores = await getStoresFromDb(queries);
     res.json(stores);
   } catch (error) {
     res.status(500).json({error: error});
