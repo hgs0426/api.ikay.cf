@@ -6,11 +6,8 @@ const checkNameLength = (name) => {
 };
 
 const addWhereCondition = (name) => {
-  let where = '';
-
-  if (name && '{name}' !== name) {
-    where += `WHERE name like '%${name}%'`;
-  }
+  let where;
+  where = name === 'all'? '': `WHERE name like '%${name}%'`;
   return where;
 };
 
