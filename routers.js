@@ -23,10 +23,11 @@ router.use(bodyParser.json());
 
 const auth = require(path.join(__dirname, 'api', 'auth', 'routers'));
 const authMiddleware = require(path.join(__dirname, 'middlewares', 'auth'));
-const convenienceStores = require('./api/stores/convenience-stores/routers');
+const storesCodes = require(path.join(__dirname, 'api', 'stores', 'codes', 'routers'));
+const stores = require(path.join(__dirname, 'api', 'stores', 'routers'));
 
 router.use('/', auth);
 router.use('/api', authMiddleware);
-router.use('/', convenienceStores);
+router.use('/', [storesCodes, stores]);
 
 module.exports = router;

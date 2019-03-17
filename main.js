@@ -19,7 +19,8 @@ const options = {
   apis: [
     `${path.join(__dirname, 'routers.js')}`,
     `${path.join(__dirname, 'api', 'auth', 'routers.js')}`,
-    `${path.join(__dirname, 'api', 'stores', 'convenience-stores', 'routers.js')}`
+    `${path.join(__dirname, 'api', 'stores', 'routers.js')}`,
+    `${path.join(__dirname, 'api', 'stores', 'codes', 'routers.js')}`
   ],
 };
  
