@@ -14,7 +14,7 @@ const limit = (queries) => {
 
 const cityConditions = (_cityCodes) => {
   const sentence = `AND city_code in (${_cityCodes}) `;
-  console.log(sentence);
+  // console.log(sentence);
   return sentence;
 };
 

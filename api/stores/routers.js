@@ -24,7 +24,7 @@ const { serveStores } = require(path.join(__dirname, 'controllers'));
  *           description: "store's code(ex: Q02A00)"
  *           example: "Q02A00"
  *       - in: "query"
- *         name: "cityCode"
+ *         name: "cityCodes"
  *         schema: 
  *           type: "string"
  *           description: "code of city. append comma between codes on getting multiple data. (ex: 41,50,11)"
